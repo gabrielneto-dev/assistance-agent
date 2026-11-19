@@ -12,7 +12,7 @@ Last updated: 2026-11-19
 
 ## Tarefa atual / próxima
 
-`SPEC-0001-T010` — **ação do usuário**: no Linux Mint, rodar `uv sync`, `uv run python -m pytest` e `uv run python -m assistance_agent chat --tenant demo --message "oi"`, e relatar o resultado.
+`SPEC-0001-T010` — **próximo passo, ação do usuário no Linux Mint**: 1) `git clone https://github.com/gabrielneto-dev/assistance-agent.git` e `cd assistance-agent`; 2) instalar o uv (`curl -LsSf https://astral.sh/uv/install.sh | sh`, depois abrir um terminal novo); 3) `uv sync`; 4) `uv run python -m pytest`; 5) `uv run python -m assistance_agent chat --tenant demo --message "oi"` (opcional: `uv run assistance-agent --help`, que deve funcionar no Linux); 6) relatar ao agente a saída e o código de cada comando.
 
 ## Tarefas concluídas
 

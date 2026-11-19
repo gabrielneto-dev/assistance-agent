@@ -73,7 +73,7 @@ updated_at: 2026-11-19
   Done when: `verification.md` registra AC-001..AC-013 no Windows; o AC-010 (Linux Mint) fica NOT_RUN até o usuário executar
   Evidence: 2026-11-19 — `AGENTS.md` (Convenções de desenvolvimento): `uv run python -m <módulo>` obrigatório (ASR do Defender), os quatro portões de qualidade, como rodar a CLI, a regra de camadas e testes sem rede. Verificação completa no Windows com `.venv` recriado: `verification.md` V-001..V-011 — AC-001..AC-009 e AC-011..AC-013 PASS; AC-010 NOT_RUN (falta o Linux Mint, T010).
 
-- [ ] SPEC-0001-T010 — Verificar no Linux Mint — ação do usuário
+- [ ] SPEC-0001-T010 — Verificar no Linux Mint — ação do usuário (passos em `Specs/STATE.md`: clonar, instalar uv, `uv sync`, testes, CLI)
   Status: ready
   Requirements: REQ-009
   Depends on: SPEC-0001-T009

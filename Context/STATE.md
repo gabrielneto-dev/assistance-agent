@@ -17,7 +17,7 @@ Estado do desenvolvimento (specs, tarefas, verificações): `Specs/STATE.md`.
 
 ## Em andamento
 
-- `SPEC-0001` em `verify`: falta o usuário rodar no Linux Mint (`SPEC-0001-T010`). Detalhes em `Specs/STATE.md`.
+- `SPEC-0001` em `verify`. **Próximo passo:** o usuário clona o repositório no Linux Mint e roda a verificação (`SPEC-0001-T010`; passos em `Specs/STATE.md`).
 
 ## Bloqueios
 
