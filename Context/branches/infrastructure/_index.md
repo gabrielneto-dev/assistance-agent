@@ -13,7 +13,7 @@ Não inclui: comportamento do agente (→ `agent-design`), APIs externas (→ `i
 
 ## Estado atual
 
-- Repositório git em `main`, só local (sem remoto). Esqueleto Python da `SPEC-0001` implementado (ainda não commitado) → `CTX-FCT-20261119-repository-initialized`.
+- Repositório git em `main`, com remoto `origin` no GitHub (`gabrielneto-dev/assistance-agent`). Esqueleto Python da `SPEC-0001` implementado e commitado (`e35a0ae`) → `CTX-FCT-20261119-repository-initialized`.
 - Windows de desenvolvimento: o Defender (ASR da TI) bloqueia os `.exe` do `.venv`; use `uv run python -m` → `CTX-FCT-20261119-windows-asr-blocks-venv-exes`.
 - Armadilhas do ferramental (ruff com Markdown, pre-commit, acentos no Git Bash) → `CTX-NTE-20261119-python-tooling-pitfalls`.
 - Stack: Python + uv → `CTX-DEC-20261119-python-uv-stack`.

@@ -11,7 +11,7 @@ Estado do desenvolvimento (specs, tarefas, verificações): `Specs/STATE.md`.
 
 ## Funcionando
 
-- Repositório git em `main`, só local (sem remoto). **Trabalho de 2026-11-19 à tarde não commitado** (último commit `b4bf2d6`).
+- Repositório git em `main`, com remoto `origin` no GitHub (`gabrielneto-dev/assistance-agent`); push só sob pedido. Último commit: `e35a0ae` (produto definido + esqueleto da SPEC-0001).
 - Sistema de contexto e SDD.
 - Esqueleto Python (`SPEC-0001`): núcleo multi-tenant, LLM e embeddings fake, CLI `uv run python -m assistance_agent chat --tenant <id>`. 59 testes, ruff, mypy strict e pre-commit OK no Windows.
 
@@ -46,6 +46,5 @@ Estado do desenvolvimento (specs, tarefas, verificações): `Specs/STATE.md`.
 ## Próximos passos prováveis
 
 1. Usuário verifica a `SPEC-0001` no Linux Mint (T010); fechar a spec.
-2. Commitar o esqueleto e o contexto (só sob pedido do usuário).
-3. Loja piloto (`CTX-QUE-20261119-pilot-shop`) e avaliação pequena para escolher o provedor de LLM.
-4. Pesquisa e decisão da integração com WhatsApp; depois a spec do atendimento (nível critical: dados reais de clientes).
+2. Loja piloto (`CTX-QUE-20261119-pilot-shop`) e avaliação pequena para escolher o provedor de LLM.
+3. Pesquisa e decisão da integração com WhatsApp; depois a spec do atendimento (nível critical: dados reais de clientes).

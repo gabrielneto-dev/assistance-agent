@@ -40,4 +40,6 @@ Identidade git (`user.name`/`user.email`) configurada **só neste repositório**
 
 Inspeção da pasta e saída do `git init` durante o bootstrap (`CTX-CP-20261119-0928-context-bootstrap`).
 
-**Atualização (2026-11-19, tarde):** existe código, ainda **não commitado**: o esqueleto da `SPEC-0001` (`src/assistance_agent/`, `tests/`, `pyproject.toml`, `uv.lock`, `.pre-commit-config.yaml`, `.gitignore`, `.env.example`, `.python-version`). O hook do pre-commit está instalado em `.git/hooks/pre-commit`. O último commit continua `b4bf2d6`.
+**Atualização (2026-11-19, tarde):** existe código: o esqueleto da `SPEC-0001` (`src/assistance_agent/`, `tests/`, `pyproject.toml`, `uv.lock`, `.pre-commit-config.yaml`, `.gitignore`, `.env.example`, `.python-version`). O hook do pre-commit está instalado em `.git/hooks/pre-commit`. Commitado em `e35a0ae` (2026-11-19), junto com o contexto da sessão. Os hooks do pre-commit passaram nesse commit.
+
+**Atualização (2026-11-19, remoto):** remoto `origin` = `https://github.com/gabrielneto-dev/assistance-agent.git`. A `main` foi enviada a pedido do usuário e acompanha `origin/main`. Push só sob pedido explícito.
