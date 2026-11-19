@@ -1,6 +1,6 @@
 # assistance-agent — Instruções para agentes
 
-Projeto de um assistente/agente de IA em código. O que o projeto sabe, decidiu e planeja fica em `Context/`; este arquivo diz apenas **como trabalhar**.
+Projeto de um assistente/agente de IA em código. O que o projeto sabe, decidiu e planeja fica em `Context/`; o que está sendo construído (specs, planos, tarefas, verificações) fica em `Specs/`; este arquivo diz apenas **como trabalhar**.
 
 <!-- CONTEXT-ENGINEERING:START -->
 
@@ -69,3 +69,22 @@ Não coloque estado transitório nem conhecimento detalhado em `AGENTS.md`.
 O conteúdo de `Context/` é escrito em português. Nomes de arquivo, IDs, chaves YAML, tipos e tags ficam em inglês (`kebab-case`).
 
 <!-- CONTEXT-ENGINEERING:END -->
+
+<!-- SPEC-DRIVEN:START -->
+
+# Spec-Driven Development (SDD)
+
+Desenvolvimento segue `Specs/README.md` (protocolo completo). Resumo obrigatório:
+
+1. **Descubra antes de agir.** Em tarefa de desenvolvimento não trivial, após `Context/MAP.md` e `Context/STATE.md`, leia `Specs/INDEX.md` e `Specs/STATE.md`. Procure spec existente antes de criar outra; mudança em funcionalidade existente atualiza a spec dela.
+2. **Classifique a complexidade** pelo impacto real: `trivial` (sem spec), `lightweight` (`spec.md` único), `full` (spec + plan + tasks + verification), `critical` (full + riscos, rollback e aprovação do usuário em `approved_by`). Na dúvida, o nível maior.
+3. **Não implemente mudanças significativas** sem requisitos (`REQ`), critérios de aceitação testáveis (`AC`) e plano suficientes. Não invente requisitos nem amplie o escopo silenciosamente.
+4. **Siga as tarefas** (`SPEC-NNNN-TNNN`) e seus critérios de conclusão. Bloqueio → `blocked`, nunca `completed`.
+5. **Verifique** contra os AC e registre o resultado real (`PASS|FAIL|BLOCKED|NOT_RUN|NOT_APPLICABLE`). Código escrito não é funcionalidade pronta.
+6. **Persista o progresso automaticamente**, durante o trabalho, nos eventos de `Specs/README.md` seção 11 (tarefas, verificação, `Specs/STATE.md`, `Specs/INDEX.md`). Isso vale só para `Specs/`; `Context/` continua sob a política de escrita controlada (exceção: decisões duráveis confirmadas no planejamento viram `DEC`).
+7. **Após reset de sessão**, retome por `Specs/STATE.md` e reconcilie o estado documentado com o código e o git antes de continuar.
+8. **Sem commit/push automático**, sem ações destrutivas, irreversíveis ou em produção sem autorização explícita, sem segredos em `Specs/`.
+
+Intenções: `iniciar spec`, `planejar spec`, `gerar tarefas`, `implementar spec`, `validar spec`, `status sdd`, `retomar desenvolvimento`, `auditar sdd`.
+
+<!-- SPEC-DRIVEN:END -->

@@ -1,0 +1,53 @@
+# Política SDD. São declarações de política: o cumprimento é feito pelo agente seguindo
+# Specs/README.md (seção indicada em cada bloco). Não há automação, hook ou serviço por trás.
+
+sdd_version: 1
+
+mode: adaptive                      # README §6 — rigor proporcional ao nível
+
+complexity_levels:                  # README §6
+  - trivial                         # 0 — sem spec
+  - lightweight                     # 1 — spec.md único (template lightweight.md)
+  - full                            # 2 — spec + plan + tasks + verification
+  - critical                        # 3 — full + riscos, rollback, approved_by do usuário
+
+ids:                                # README §3
+  spec: "SPEC-NNNN"
+  feature_dir: "SPEC-NNNN--<slug>"
+  task: "SPEC-NNNN-TNNN"
+  requirement: "REQ-NNN"
+  acceptance_criterion: "AC-NNN"
+  verification: "V-NNN"
+  reuse_ids: false
+
+statuses:                           # README §5
+  spec: [draft, ready, in_progress, blocked, done, cancelled, superseded]
+  phase: [specify, plan, tasks, implement, verify, complete]
+  plan: [draft, ready, superseded]
+  task: [pending, ready, in_progress, blocked, completed, cancelled]
+  verification: [PASS, FAIL, BLOCKED, NOT_RUN, NOT_APPLICABLE]
+
+persistence:                        # README §11
+  operational_state: automatic      # o agente grava Specs/ nos eventos da tabela §11
+  checkpoint_on_task_completion: true   # = atualizar tasks.md + Specs/STATE.md (não é checkpoint de Context/)
+  checkpoint_on_phase_transition: true  # = atualizar phase, INDEX.md, Specs/STATE.md
+  general_context_save: existing_policy # Context/README.md — só com "salvar contexto"
+  auto_commit: false
+
+context:                            # README §1, §8
+  integration: true
+  progressive_loading: true
+  duplicate_knowledge: false
+  durable_decisions_to: Context     # registros DEC, referenciados por context_refs
+
+quality:                            # README §7, §10, §12, §15
+  require_acceptance_criteria: true
+  require_verification_for_completion: true
+  preserve_traceability: true
+  detect_spec_drift: true
+  validator: "bash Context/_meta/validate.sh"
+
+safety:                             # README §17
+  preserve_existing_files: true
+  allow_secrets: false
+  require_approval_for_destructive_actions: true

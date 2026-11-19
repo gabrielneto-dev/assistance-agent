@@ -7,10 +7,13 @@ Latest checkpoint: `Context/checkpoints/CP-20261119-0928-context-bootstrap.md` (
 
 Definir os fundamentos do assistente de IA (escopo, stack, provedor de LLM, ambiente de execução) antes de escrever código.
 
+Estado do desenvolvimento (specs, tarefas, verificações): `Specs/STATE.md`.
+
 ## Funcionando
 
-- Repositório git inicializado (sem commits).
+- Repositório git em `main`, só local (sem remoto).
 - Sistema de contexto instalado: `AGENTS.md`, `CLAUDE.md`, `Context/`.
+- Sistema SDD instalado: `Specs/` (nenhuma spec ainda).
 
 ## Em andamento
 
@@ -38,5 +41,5 @@ Definir os fundamentos do assistente de IA (escopo, stack, provedor de LLM, ambi
 
 1. Responder escopo e usuários (define o resto).
 2. Decidir stack e provedor de LLM (registrar como `decision`).
-3. Criar estrutura inicial do código, `.gitignore` e primeiro commit.
+3. Primeira funcionalidade via `iniciar spec` (`Specs/README.md`); criar estrutura do código e `.gitignore` da stack.
 4. `salvar contexto` ao fim da sessão de definição.

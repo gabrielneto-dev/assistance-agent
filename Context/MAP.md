@@ -40,6 +40,12 @@ Rotas:
 - Onde o agente roda → `CTX-QUE-20261119-deployment-target`
 - Estado do repositório → `CTX-FCT-20261119-repository-initialized`
 
+## Desenvolvimento (SDD) — `Specs/` na raiz do projeto
+
+- Specs, planos, tarefas e verificações: `Specs/features/` (manual `Specs/README.md`)
+- Funcionalidades registradas: `Specs/INDEX.md`
+- Estado operacional do desenvolvimento: `Specs/STATE.md`
+
 ## Transversal (`global/`)
 
 - Escopo e usuários do projeto → `CTX-QUE-20261119-project-scope-and-users`

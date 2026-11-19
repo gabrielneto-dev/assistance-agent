@@ -27,10 +27,12 @@ Em 2026-11-19 a pasta do projeto estava completamente vazia (nenhum código, doc
 
 Não existe `.gitignore` nem remoto git configurado.
 
+**Atualização (2026-11-19):** os primeiros commits já foram feitos em `main`, a pedido do usuário: bootstrap de contexto, depois `.gitattributes` forçando LF em `*.sh` (necessário para o Bash executar `Context/_meta/validate.sh` com `core.autocrlf=true`). Na sequência, foi instalado o SDD em `Specs/`. Continua sem remoto e sem `.gitignore`.
+
 ## Implicações
 
 - Não havia documentação a migrar; todo o conhecimento inicial veio das respostas do usuário.
-- O primeiro commit e o `.gitignore` aguardam a definição da stack (`CTX-QUE-20261119-tech-stack`).
+- O `.gitignore` aguarda a definição da stack (`CTX-QUE-20261119-tech-stack`).
 
 ## Evidência
 

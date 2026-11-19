@@ -13,7 +13,7 @@ Não inclui: comportamento do agente (→ `agent-design`), APIs externas (→ `i
 
 ## Estado atual
 
-- Repositório git inicializado vazio, sem commits, sem `.gitignore` → `CTX-FCT-20261119-repository-initialized`.
+- Repositório git em `main`, só local (sem remoto); contém apenas `AGENTS.md`, `CLAUDE.md`, `.gitattributes` (`*.sh` em LF), `Context/` e `Specs/`; sem código e sem `.gitignore` → `CTX-FCT-20261119-repository-initialized`.
 - Ambiente de desenvolvimento: Windows 11 (ver `core/constraints.md`).
 
 ## Decisões ativas

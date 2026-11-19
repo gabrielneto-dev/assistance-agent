@@ -13,6 +13,16 @@
 | Supersession | Substituição de um registro por outro (`supersedes`/`superseded_by`) sem apagar o antigo |
 | Salvar contexto | Gatilho do Context Save Protocol (ver `Context/README.md`) |
 
+## Desenvolvimento (SDD)
+
+| Termo | Significado |
+|---|---|
+| SDD | Spec-Driven Development — protocolo em `Specs/README.md` |
+| Spec | Especificação de uma funcionalidade, `SPEC-NNNN`, em `Specs/features/` |
+| REQ / AC | Requisito (`REQ-NNN`) e critério de aceitação (`AC-NNN`) dentro de uma spec |
+| Tarefa | Passo rastreável `SPEC-NNNN-TNNN` em `tasks.md` |
+| Nível | Rigor do SDD: trivial, lightweight, full, critical |
+
 ## Domínio do projeto
 
 | Termo | Significado |

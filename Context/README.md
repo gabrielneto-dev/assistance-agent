@@ -7,9 +7,10 @@ Princípio: **SESSION ≠ MEMORY**. A sessão é descartável; o conhecimento de
 Regra de camadas:
 
 ```text
-COMO trabalhar   → AGENTS.md (CLAUDE.md importa AGENTS.md)
-O QUE se sabe    → Context/
-Trabalho em curso → sessão atual (temporária)
+COMO trabalhar         → AGENTS.md (CLAUDE.md importa AGENTS.md)
+O QUE se sabe          → Context/
+O QUE se constrói      → Specs/ (specs, planos, tarefas, verificações — ver Specs/README.md)
+Trabalho em curso      → sessão atual (temporária)
 ```
 
 ---
@@ -52,6 +53,9 @@ Subpastas vazias são omitidas; crie-as quando o primeiro registro daquele tipo 
 | Registros atômicos (`.md` com frontmatter) | Conhecimento canônico detalhado |
 | `sources/` | De onde veio a informação |
 | `_meta/catalog.jsonl` | Índice derivado — **não** é fonte primária |
+| `../Specs/` (raiz do projeto) | Specs, planos, tarefas, verificações e estado do desenvolvimento (`Specs/STATE.md`) |
+
+`Context/` não duplica o conteúdo de `Specs/`: registros e checkpoints referenciam specs por ID (`SPEC-NNNN`, `SPEC-NNNN-TNNN`), e specs referenciam registros de contexto por `context_refs` (`CTX-...`).
 
 Se o catálogo divergir dos arquivos Markdown, os arquivos vencem: reconstrua o catálogo (seção 19).
 
@@ -185,6 +189,8 @@ WRITE = controlado (gatilho explícito do usuário)
 
 Fora do save, o agente pode corrigir um registro factualmente errado que esteja atrapalhando a tarefa, mas não deve criar documentação a cada mensagem.
 
+**Exceção SDD (estreita):** quando, no planejamento de uma spec (`Specs/README.md` seção 8), o usuário confirmar uma decisão arquitetural durável, o agente registra imediatamente o `DEC` correspondente (registro + linha no catálogo + `_index.md` da branch) para que o plano possa citá-lo em `context_refs`. Nada mais em `Context/` é escrito por esse motivo — checkpoint, STATE e demais registros continuam esperando `salvar contexto`. A persistência automática do SDD acontece só em `Specs/`.
+
 ## 10. Context Save Protocol (`salvar contexto`)
 
 Gatilhos (por intenção): `salvar contexto`, `salve o contexto`, `save context`, `persistir contexto`, `atualizar contexto`, `atualizar memória do projeto`, `criar checkpoint`, `checkpoint da sessão`.
@@ -192,6 +198,8 @@ Gatilhos (por intenção): `salvar contexto`, `salve o contexto`, `save context`
 **Não faça só um resumo da conversa.** Reconstrua semanticamente a sessão: objetivo, tarefas executadas, problemas e causas, tentativas relevantes, abordagens que falharam, soluções validadas, decisões e motivos, mudanças e arquivos afetados, testes e resultados, novos fatos, assumptions, perguntas abertas/respondidas, riscos, pendências, próximos passos, mudanças de estado, informações obsoletas, regras operacionais descobertas.
 
 Use evidência do projeto, não só a memória da conversa: `git status`, `git diff`, `git log` e os próprios arquivos.
+
+Inclua o estado do SDD: leia `Specs/STATE.md` e `Specs/INDEX.md` e registre no checkpoint (seção "Estado SDD") as specs ativas, fase, próxima tarefa e última verificação **por referência** (IDs e caminhos), sem copiar specs, planos ou tarefas. Se `Specs/STATE.md` estiver desatualizado em relação ao código, reconcilie-o primeiro (`Specs/README.md` seção 13).
 
 ### Pipeline
 
@@ -236,7 +244,7 @@ Pergunta: "isto é uma instrução durável sobre COMO futuros agentes devem tra
 
 Cada save significativo cria `checkpoints/CP-YYYYMMDD-HHMM-<slug>.md` com as seções:
 
-Objetivo · O que mudou · Decisões · Descobertas · Problemas resolvidos · Abordagens que falharam (vale lembrar) · Estado atual · Perguntas abertas · Próximos passos · Arquivos/artefatos afetados · Registros de contexto criados/atualizados.
+Objetivo · O que mudou · Decisões · Descobertas · Problemas resolvidos · Abordagens que falharam (vale lembrar) · Estado atual · Estado SDD (por referência) · Perguntas abertas · Próximos passos · Arquivos/artefatos afetados · Registros de contexto criados/atualizados.
 
 O checkpoint é fotografia de continuidade e **não substitui** registros atômicos: conhecimento durável deve ir para o tipo correto. Após criá-lo, atualize `STATE.md` (`Latest checkpoint: ...`) e remova do STATE o que deixou de ser atual (já preservado em registros/checkpoints).
 
@@ -331,4 +339,4 @@ Grande parte dessas verificações é feita por `_meta/validate.sh` (somente lei
 bash Context/_meta/validate.sh
 ```
 
-Ele confere o bloco único em `AGENTS.md`, o import em `CLAUDE.md`, IDs únicos e coerentes com o nome do arquivo, referências `CTX-*` válidas, catálogo igual aos registros (IDs, paths, status), tags e branches presentes na taxonomia, `_index.md` em cada branch, segredos, arquivos obrigatórios e o checkpoint mais recente. Termina com `RESULT: PASS|FAIL` (código de saída 1 em falha). Rode-o ao final de todo `salvar contexto` e de toda auditoria; contradições, status semânticos e tamanho de documentos continuam sendo revisão manual.
+Ele confere os blocos únicos `CONTEXT-ENGINEERING` e `SPEC-DRIVEN` em `AGENTS.md`, o import em `CLAUDE.md`, a estrutura e os IDs de `Specs/` (ver `Specs/README.md` seção 15), IDs únicos e coerentes com o nome do arquivo, referências `CTX-*` válidas, catálogo igual aos registros (IDs, paths, status), tags e branches presentes na taxonomia, `_index.md` em cada branch, segredos, arquivos obrigatórios e o checkpoint mais recente. Termina com `RESULT: PASS|FAIL` (código de saída 1 em falha). Rode-o ao final de todo `salvar contexto` e de toda auditoria; contradições, status semânticos e tamanho de documentos continuam sendo revisão manual.
