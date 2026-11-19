@@ -60,6 +60,8 @@ Referências a nomes de variáveis de ambiente ou locais em gerenciadores de seg
 
 ## Manutenção
 
+Após alterar `Context/` ou `Specs/`, rode `bash Context/_meta/validate.sh` (Git Bash) e corrija o que falhar.
+
 Se surgir uma regra operacional durável para todo o projeto (como trabalhar), avalie incluí-la neste arquivo.
 
 Não coloque estado transitório nem conhecimento detalhado em `AGENTS.md`.
@@ -88,3 +90,21 @@ Desenvolvimento segue `Specs/README.md` (protocolo completo). Resumo obrigatóri
 Intenções: `iniciar spec`, `planejar spec`, `gerar tarefas`, `implementar spec`, `validar spec`, `status sdd`, `retomar desenvolvimento`, `auditar sdd`.
 
 <!-- SPEC-DRIVEN:END -->
+
+# Convenções de desenvolvimento
+
+- Python gerenciado com **uv**: `uv add` para dependências, `uv run` para executar, `uv sync` para instalar. Não use `pip install` direto.
+- O projeto é desenvolvido em Windows 11 e Linux Mint: código, scripts e comandos documentados devem funcionar nos dois (use `pathlib`, nada de caminhos absolutos; scripts de projeto em Python via `uv run`, não só PowerShell ou só Bash).
+- Execute ferramentas sempre como **`uv run python -m <módulo>`**, nunca pelos `.exe` de `.venv/Scripts`: no Windows de desenvolvimento uma regra ASR do Defender, gerenciada pela TI, bloqueia esses executáveis. Não tente contornar nem alterar a política.
+- Portões de qualidade (todos devem passar antes de commitar; o pre-commit roda ruff e mypy):
+
+  ```text
+  uv run python -m pytest
+  uv run python -m ruff check
+  uv run python -m ruff format --check
+  uv run python -m mypy
+  ```
+
+- Rodar a CLI: `uv run python -m assistance_agent chat --tenant <id> [--message "<texto>"]`.
+- Camadas em `src/assistance_agent/`: `core` e `ports` nunca importam `adapters` nem `interfaces` (`tests/test_architecture.py` garante isso).
+- Testes não acessam a rede (fixture em `tests/conftest.py`); use os adapters fake.

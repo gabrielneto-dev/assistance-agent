@@ -1,0 +1,46 @@
+[project]
+name = "assistance-agent"
+version = "0.1.0"
+description = "Atendente de IA no WhatsApp para assistências técnicas de eletrônicos (SaaS multi-tenant)."
+authors = [{ name = "Gabriel Siqueira" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+assistance-agent = "assistance_agent.interfaces.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.5.0",
+    "ruff>=0.17.6",
+]
+
+# Todas as ferramentas rodam com `uv run python -m <módulo>` (ver AGENTS.md).
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests"]
+# Só Python: o ruff 0.17 também formataria blocos de código em Markdown (Context/, Specs/).
+include = ["*.py", "*.pyi"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.13"
+files = ["src"]
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = ["-ra"]

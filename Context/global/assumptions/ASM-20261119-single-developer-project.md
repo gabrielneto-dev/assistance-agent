@@ -5,10 +5,10 @@ title: O projeto é desenvolvido por uma única pessoa
 branch: global
 tags: [scope, project-setup]
 status: active
-confidence: low
+confidence: medium
 created_at: 2026-11-19
 updated_at: 2026-11-19
-source_ids: [CTX-SRC-20261119-user-bootstrap-answers]
+source_ids: [CTX-SRC-20261119-user-bootstrap-answers, CTX-SRC-20261119-user-definition-answers]
 related: [CTX-QUE-20261119-project-scope-and-users]
 depends_on: []
 ---
@@ -35,3 +35,7 @@ Perguntar ao usuário junto com `CTX-QUE-20261119-project-scope-and-users`, ou o
 ## Consequência se falsa
 
 Adotar convenções de colaboração (fluxo de branches, PRs, CI) e registrá-las em `AGENTS.md`.
+
+## Evidência adicional (2026-11-19)
+
+O usuário disse que vai programar em duas máquinas próprias (Windows e Linux Mint), sem mencionar colaboradores. O produto é SaaS para terceiros, mas isso se refere aos usuários finais, não a quem desenvolve.

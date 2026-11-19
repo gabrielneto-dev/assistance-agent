@@ -18,8 +18,8 @@ Status: active (fase de definição)
 Tags principais: agent-behavior, prompts, tools, memory
 
 Rotas:
-- Capacidades, ferramentas e memória do agente → `branches/agent-design/_index.md`
-- Pergunta aberta sobre capacidades → `CTX-QUE-20261119-agent-capabilities`
+- Autonomia e memória do agente → `CTX-DEC-20261119-agent-autonomy-and-memory`
+- Ferramentas concretas (aberto) → `CTX-QUE-20261119-agent-capabilities`
 
 ### integrations
 Path: `branches/integrations/`
@@ -28,6 +28,8 @@ Tags principais: llm, external-apis, integrations
 
 Rotas:
 - Provedor/modelo de LLM → `CTX-QUE-20261119-llm-provider`
+- Preços de LLM e embeddings (2026-11-19) → `CTX-RES-20261119-llm-provider-comparison`
+- Integração com WhatsApp → `CTX-QUE-20261119-whatsapp-integration-method`
 - Serviços externos → `branches/integrations/_index.md`
 
 ### infrastructure
@@ -36,9 +38,14 @@ Status: active (fase de definição)
 Tags principais: stack, runtime, deployment, tooling
 
 Rotas:
-- Linguagem/framework/pacotes → `CTX-QUE-20261119-tech-stack`
-- Onde o agente roda → `CTX-QUE-20261119-deployment-target`
+- Linguagem e pacotes (Python + uv) → `CTX-DEC-20261119-python-uv-stack`
+- Framework, banco, vetores (aberto) → `CTX-QUE-20261119-tech-stack`
+- Onde roda (local, Windows + Linux Mint) → `CTX-DEC-20261119-local-cross-platform-runtime`
 - Estado do repositório → `CTX-FCT-20261119-repository-initialized`
+- Script de validação (uso e armadilhas) → `CTX-NTE-20261119-validate-script-pitfalls`
+- Layout em camadas e ferramentas de qualidade → `CTX-DEC-20261119-layered-package-and-quality-tooling`
+- Defender bloqueia `.exe` do `.venv` (usar `python -m`) → `CTX-FCT-20261119-windows-asr-blocks-venv-exes`
+- Armadilhas do ferramental Python → `CTX-NTE-20261119-python-tooling-pitfalls`
 
 ## Desenvolvimento (SDD) — `Specs/` na raiz do projeto
 
@@ -48,7 +55,12 @@ Rotas:
 
 ## Transversal (`global/`)
 
-- Escopo e usuários do projeto → `CTX-QUE-20261119-project-scope-and-users`
+- Ideia do produto (atendente de IA para assistências técnicas) → `CTX-DEC-20261119-repair-shop-ai-attendant`
+- Formato do produto (SaaS multi-tenant, API/CLI/WhatsApp) → `CTX-DEC-20261119-multi-tenant-saas-product`
+- Loja piloto → `CTX-QUE-20261119-pilot-shop`
+- Riscos transversais → `global/risks/`
+- Processo de desenvolvimento (SDD + contexto) → `CTX-DEC-20261119-adopt-sdd-with-context-engineering`
+- Decisões transversais → `global/decisions/`
 - Hipóteses gerais → `global/assumptions/`
 
 ## Continuidade e evidência

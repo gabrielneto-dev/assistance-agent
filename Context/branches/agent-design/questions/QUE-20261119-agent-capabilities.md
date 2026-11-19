@@ -8,7 +8,7 @@ status: open
 priority: high
 created_at: 2026-11-19
 updated_at: 2026-11-19
-related: [CTX-QUE-20261119-llm-provider]
+related: [CTX-QUE-20261119-llm-provider, CTX-DEC-20261119-agent-autonomy-and-memory, CTX-DEC-20261119-repair-shop-ai-attendant]
 depends_on: [CTX-QUE-20261119-project-scope-and-users]
 resolved_by: null
 ---
@@ -36,3 +36,20 @@ Define a arquitetura do agente (loop de ferramentas, armazenamento de memória, 
 ## Como resolver
 
 Responder primeiro `CTX-QUE-20261119-project-scope-and-users`; depois listar casos de uso e derivar as ferramentas.
+
+## Resposta parcial (2026-11-19)
+
+- Decidido: confirmação para ações com efeito externo; memória de conversa, persistente e RAG → `CTX-DEC-20261119-agent-autonomy-and-memory`.
+- **Ainda aberto:** lista concreta de ferramentas por finalidade (produtividade, suporte, automação) e como a confirmação aparece em cada canal (API, CLI, WhatsApp).
+
+## Atualização (2026-11-19)
+
+Ferramentas iniciais derivadas do produto (`CTX-DEC-20261119-repair-shop-ai-attendant`):
+
+- consultar ordem de serviço;
+- estimar orçamento pela tabela de preços;
+- buscar informações da loja;
+- registrar aprovação ou recusa de orçamento (com confirmação);
+- transferir para humano.
+
+Ainda aberto: os contratos exatos de cada ferramenta e como a confirmação e a transferência aparecem no WhatsApp. Isso será definido nas specs.

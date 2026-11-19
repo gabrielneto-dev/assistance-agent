@@ -17,3 +17,18 @@ Somente mudanças estruturais da memória (branches, taxonomia, protocolo, schem
 - `Context/README.md`: `Specs/` entre as fontes de verdade; exceção estreita de escrita para `DEC` confirmada no planejamento; save protocol e checkpoint incluem o estado SDD por referência.
 - `MAP.md` roteia para `Specs/`; `STATE.md` aponta para `Specs/STATE.md`.
 - `validate.sh` ganhou a seção "Specs".
+
+## 2026-11-19 — Primeiro save pós-SDD
+
+- Criada a pasta `global/decisions/` (primeira decisão: `CTX-DEC-20261119-adopt-sdd-with-context-engineering`) e `branches/infrastructure/notes/`.
+- `AGENTS.md` (Manutenção): regra de rodar `validate.sh` após alterar `Context/` ou `Specs/`.
+- Checkpoint: `CTX-CP-20261119-1149-sdd-install-and-tooling`.
+
+## 2026-11-19 — Definições fundamentais
+
+- Criadas as pastas `decisions/` em `agent-design` e `infrastructure`.
+- `AGENTS.md`: nova seção "Convenções de desenvolvimento" (uv; portabilidade Windows/Linux), fora dos blocos gerenciados.
+
+## 2026-11-19 — Ideia do produto
+
+- Criada `global/risks/` (primeiro risco: `CTX-RSK-20261119-ai-wrong-quote-or-status`).

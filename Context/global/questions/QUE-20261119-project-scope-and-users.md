@@ -4,14 +4,14 @@ type: question
 title: Qual problema o assistente resolve e para quem?
 branch: global
 tags: [scope, users, goals]
-status: open
+status: answered
 priority: critical
 created_at: 2026-11-19
 updated_at: 2026-11-19
-source_ids: [CTX-SRC-20261119-user-bootstrap-answers]
-related: [CTX-ASM-20261119-single-developer-project]
+source_ids: [CTX-SRC-20261119-user-bootstrap-answers, CTX-SRC-20261119-user-definition-answers]
+related: [CTX-ASM-20261119-single-developer-project, CTX-DEC-20261119-multi-tenant-saas-product]
 depends_on: []
-resolved_by: null
+resolved_by: CTX-DEC-20261119-multi-tenant-saas-product
 ---
 
 # Qual problema o assistente resolve e para quem?
@@ -39,3 +39,7 @@ Sabe-se apenas que é "um assistente/agente de IA em código". Sem escopo, não 
 ## Como resolver
 
 Perguntar ao usuário. Registrar a resposta aqui, atualizar `core/overview.md` e `core/goals.md`.
+
+## Resposta (2026-11-19)
+
+SaaS multi-tenant para terceiros. Finalidades: produtividade pessoal, atendimento/suporte e automação de processos. Interfaces iniciais: API, CLI e WhatsApp. Detalhes e consequências → `CTX-DEC-20261119-multi-tenant-saas-product`.

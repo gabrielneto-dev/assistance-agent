@@ -13,7 +13,8 @@ Não inclui: comportamento do agente (→ `agent-design`), runtime/deploy (→ `
 
 ## Estado atual
 
-Nada definido.
+- Primeiro canal de mensageria: **WhatsApp** (`CTX-DEC-20261119-multi-tenant-saas-product`); meio de integração indefinido.
+- Provedor de LLM indefinido; critérios em `CTX-QUE-20261119-llm-provider`; preços comparados em `CTX-RES-20261119-llm-provider-comparison` (revisar em 2026-12-01).
 
 ## Decisões ativas
 
@@ -21,7 +22,8 @@ Nada definido.
 
 ## Perguntas abertas
 
-- `CTX-QUE-20261119-llm-provider` — qual provedor/modelo de LLM usar.
+- `CTX-QUE-20261119-llm-provider` — qual provedor/modelo de LLM usar (crítica; pesquisa comparativa pendente).
+- `CTX-QUE-20261119-whatsapp-integration-method` — API oficial da Meta ou provedor intermediário; conexão por tenant.
 
 ## Riscos
 
@@ -34,4 +36,4 @@ Nada definido.
 
 ## Rotas
 
-- Registros: `questions/`. Informação temporal (preço, versão de modelo, limites) exige `valid_from`/`revisit_at` e `source_ids`.
+- Registros: `questions/`, `research/`. Informação temporal (preço, versão de modelo, limites) exige `valid_from`/`revisit_at` e `source_ids`.

@@ -27,6 +27,11 @@
 
 | Termo | Significado |
 |---|---|
-| Agente / assistente | O software que este projeto constrói. Definição precisa pendente (`CTX-QUE-20261119-project-scope-and-users`) |
+| Agente / assistente | O software que este projeto constrói. SaaS multi-tenant de assistente de IA (`CTX-DEC-20261119-multi-tenant-saas-product`) |
 | LLM | Modelo de linguagem usado pelo agente |
 | Ferramenta (tool) | Ação externa que o agente pode invocar |
+| Tenant | Loja de assistência técnica que assina o SaaS; dados, memória, base de conhecimento e configurações isolados por tenant |
+| Cliente final | Cliente da loja, que conversa com o atendente pelo WhatsApp |
+| OS | Ordem de serviço: registro de um reparo (cliente, aparelho, defeito, status, orçamento) |
+| Transferência para humano | Passagem da conversa da IA para um atendente da loja |
+| RAG | Busca em documentos do tenant para fundamentar respostas (base de conhecimento) |

@@ -1,2 +1,8 @@
 # Scripts de shell precisam de LF para rodar no Bash, mesmo com core.autocrlf=true no Windows.
 *.sh text eol=lf
+
+# Código e configuração em LF para ficarem idênticos no Windows e no Linux Mint.
+*.py text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+uv.lock text eol=lf

@@ -13,25 +13,25 @@ Não inclui: escolha do provedor de LLM e APIs externas (→ `integrations`), st
 
 ## Estado atual
 
-Nada definido. Depende do escopo do projeto.
+Autonomia e memória definidas: confirmação para ações externas; memória de conversa, persistente e RAG, isoladas por tenant. Ferramentas iniciais derivadas do produto: consultar OS, estimar orçamento, informações da loja, aprovar orçamento, transferir para humano (`CTX-DEC-20261119-repair-shop-ai-attendant`).
 
 ## Decisões ativas
 
-- Nenhuma.
+- `CTX-DEC-20261119-agent-autonomy-and-memory` — confirmação para ações externas; três camadas de memória.
 
 ## Perguntas abertas
 
-- `CTX-QUE-20261119-agent-capabilities` — quais capacidades, ferramentas e modelo de memória o agente terá.
+- `CTX-QUE-20261119-agent-capabilities` — parcialmente respondida; resta a lista de ferramentas e a confirmação por canal.
 
 ## Riscos
 
-- Nenhum registrado.
+- `CTX-RSK-20261119-ai-wrong-quote-or-status` — informar preço, prazo ou status errado.
 
 ## Relações com outras branches
 
 - `integrations`: ferramentas do agente costumam depender de APIs externas e do provedor de LLM.
-- `global`: depende de `CTX-QUE-20261119-project-scope-and-users`.
+- `global`: decorre de `CTX-DEC-20261119-multi-tenant-saas-product`.
 
 ## Rotas
 
-- Registros: `questions/` (crie `decisions/`, `research/` etc. quando necessário).
+- Registros: `decisions/`, `questions/`.

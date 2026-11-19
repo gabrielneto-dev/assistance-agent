@@ -44,7 +44,7 @@ for b in $(for f in $recs; do grep -m1 '^branch: ' "$f" | sed 's/branch: //'; do
 done
 for d in Context/branches/*/; do [ -f "$d/_index.md" ] || { echo "NO _index in $d"; fail=1; }; done
 echo "== secrets scan"
-s=$(grep -rniE 'sk-[a-z0-9]{8,}|BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|token|api[_-]?key)[[:space:]]*[=:][[:space:]]*["'"'"']?[A-Za-z0-9/+_-]{8,}' Context Specs AGENTS.md CLAUDE.md 2>/dev/null)
+s=$(grep -rniE '(^|[^a-z0-9])sk-[a-z0-9_-]{8,}|BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|token|api[_-]?key)[[:space:]]*[=:][[:space:]]*["'"'"']?[A-Za-z0-9/+_-]{8,}' Context Specs AGENTS.md CLAUDE.md 2>/dev/null)
 [ -z "$s" ] && echo "secrets: none" || { echo "SECRETS? $s"; fail=1; }
 echo "== required files"
 for f in AGENTS.md CLAUDE.md Context/README.md Context/MAP.md Context/STATE.md Context/_meta/config.yaml Context/_meta/taxonomy.yaml Context/_meta/catalog.jsonl Context/_meta/changelog.md Context/core/overview.md Context/core/goals.md Context/core/constraints.md Context/core/glossary.md; do [ -f "$f" ] || { echo "MISSING $f"; fail=1; }; done

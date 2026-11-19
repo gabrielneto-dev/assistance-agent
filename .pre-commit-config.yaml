@@ -1,0 +1,21 @@
+# Hooks locais: usam as ferramentas do ambiente uv (nada é baixado pelo pre-commit).
+# Chamadas via `python -m` porque o Windows de desenvolvimento bloqueia os .exe do .venv.
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: uv run python -m ruff check --fix
+        language: system
+        types: [python]
+      - id: ruff-format
+        name: ruff format
+        entry: uv run python -m ruff format
+        language: system
+        types: [python]
+      - id: mypy
+        name: mypy (strict, src/)
+        entry: uv run python -m mypy
+        language: system
+        types: [python]
+        pass_filenames: false
