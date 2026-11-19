@@ -1,0 +1,76 @@
+version: 1
+
+# Branches válidas no campo `branch` dos registros.
+branches:
+  - global
+  - agent-design
+  - integrations
+  - infrastructure
+
+types:
+  FCT: fact
+  RES: research
+  DEC: decision
+  ASM: assumption
+  QUE: question
+  PLN: plan
+  RSK: risk
+  NTE: note
+  SRC: source
+  SUM: summary
+  EXP: experiment
+  CP: checkpoint
+
+# Tags canônicas agrupadas por área. Use sempre a forma listada.
+# `avoid` lista sinônimos que NÃO devem ser usados.
+canonical_tags:
+  project:
+    - scope
+    - users
+    - goals
+    - project-setup
+    - context-engineering
+  agent-design:
+    - agent-behavior
+    - prompts
+    - tools
+    - memory
+  integrations:
+    - llm
+    - external-apis
+    - integrations
+  infrastructure:
+    - stack
+    - runtime
+    - deployment
+    - tooling
+    - git
+
+avoid:
+  llm: [ai-model, model, language-model]
+  tools: [tool-use, function-calling]
+  prompts: [prompt, system-prompt]
+  deployment: [deploy, hosting]
+  stack: [tech-stack, technology]
+  external-apis: [apis, third-party]
+
+statuses:
+  - active
+  - open
+  - answered
+  - candidate
+  - planned
+  - in-progress
+  - completed
+  - cancelled
+  - experimental
+  - blocked
+  - superseded
+  - deprecated
+  - archived
+
+confidence:
+  - low
+  - medium
+  - high
+  - verified
