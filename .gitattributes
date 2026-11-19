@@ -1,0 +1,2 @@
+# Scripts de shell precisam de LF para rodar no Bash, mesmo com core.autocrlf=true no Windows.
+*.sh text eol=lf
