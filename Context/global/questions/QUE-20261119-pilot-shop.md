@@ -7,7 +7,7 @@ tags: [users, goals]
 status: open
 priority: high
 created_at: 2026-11-19
-updated_at: 2026-11-19
+updated_at: 2026-11-21
 source_ids: [CTX-SRC-20261119-user-definition-answers]
 related: [CTX-DEC-20261119-repair-shop-ai-attendant]
 depends_on: []
@@ -33,3 +33,11 @@ Dados de clientes finais são pessoais (LGPD): use só material anonimizado em t
 ## Como resolver
 
 Perguntar ao usuário.
+
+## O que falta o usuário responder (levantado em 2026-11-21)
+
+1. A assistência onde o usuário trabalha pode ser o primeiro tenant piloto? Se não, qual seria?
+2. Que material ela fornece, anonimizado: perguntas frequentes, tabela de preços, um exemplo de ordem de serviço, 10–30 conversas reais de WhatsApp sem nomes nem telefones?
+3. Quem responde hoje o WhatsApp da loja e quanto tempo isso toma por dia? Isso mostra se o produto resolve um problema real.
+
+É a pergunta a responder primeiro: o material dela alimenta a avaliação do provedor de LLM (`CTX-QUE-20261119-llm-provider`).

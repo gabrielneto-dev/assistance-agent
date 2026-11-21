@@ -96,6 +96,7 @@ Intenções: `iniciar spec`, `planejar spec`, `gerar tarefas`, `implementar spec
 - Python gerenciado com **uv**: `uv add` para dependências, `uv run` para executar, `uv sync` para instalar. Não use `pip install` direto.
 - O projeto é desenvolvido em Windows 11 e Linux Mint: código, scripts e comandos documentados devem funcionar nos dois (use `pathlib`, nada de caminhos absolutos; scripts de projeto em Python via `uv run`, não só PowerShell ou só Bash).
 - Execute ferramentas sempre como **`uv run python -m <módulo>`**, nunca pelos `.exe` de `.venv/Scripts`: no Windows de desenvolvimento uma regra ASR do Defender, gerenciada pela TI, bloqueia esses executáveis. Não tente contornar nem alterar a política.
+- Em cada clone novo, rode uma vez `uv sync` e `uv run python -m pre_commit install`; sem isso os commits não passam pelos hooks.
 - Portões de qualidade (todos devem passar antes de commitar; o pre-commit roda ruff e mypy):
 
   ```text

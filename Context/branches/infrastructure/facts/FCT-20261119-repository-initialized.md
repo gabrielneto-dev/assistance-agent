@@ -7,7 +7,7 @@ tags: [git, project-setup]
 status: active
 confidence: verified
 created_at: 2026-11-19
-updated_at: 2026-11-19
+updated_at: 2026-11-21
 source_ids: [CTX-SRC-20261119-user-bootstrap-answers]
 related: [CTX-QUE-20261119-tech-stack, CTX-NTE-20261119-validate-script-pitfalls]
 depends_on: []
@@ -43,3 +43,5 @@ Inspeção da pasta e saída do `git init` durante o bootstrap (`CTX-CP-20261119
 **Atualização (2026-11-19, tarde):** existe código: o esqueleto da `SPEC-0001` (`src/assistance_agent/`, `tests/`, `pyproject.toml`, `uv.lock`, `.pre-commit-config.yaml`, `.gitignore`, `.env.example`, `.python-version`). O hook do pre-commit está instalado em `.git/hooks/pre-commit`. Commitado em `e35a0ae` (2026-11-19), junto com o contexto da sessão. Os hooks do pre-commit passaram nesse commit.
 
 **Atualização (2026-11-19, remoto):** remoto `origin` = `https://github.com/gabrielneto-dev/assistance-agent.git`. A `main` foi enviada a pedido do usuário e acompanha `origin/main`. Push só sob pedido explícito.
+
+**Atualização (2026-11-21, Linux Mint):** o repositório também está clonado no Linux Mint, com `main` = `origin/main` = `15bf92e`. O fechamento da `SPEC-0001` foi feito numa worktree do Claude Code (branch `claude/continuar-desenvolvimento-d63219`, em `.claude/worktrees/`) e **ainda não foi commitado**. Nesse clone o hook do pre-commit **não está instalado** (`.git/hooks` só tem exemplos): é preciso rodar `uv run python -m pre_commit install` uma vez por clone, senão os commits feitos no Linux não passam pelo ruff e pelo mypy.

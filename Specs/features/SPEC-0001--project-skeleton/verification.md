@@ -3,14 +3,14 @@ id: SPEC-0001-VER
 type: verification
 spec: SPEC-0001
 title: Verificação — Esqueleto do projeto
-status: ready
+status: done
 created_at: 2026-11-19
 updated_at: 2026-11-19
 ---
 
 # Verificação — SPEC-0001
 
-Ambiente: Windows 11, uv 0.13.9, Python 3.13.18, `.venv` recriado do zero (`rm -rf .venv && uv sync`). Todos os comandos rodados como `uv run python -m ...`.
+Ambiente principal: Windows 11, uv 0.13.9, Python 3.13.18, `.venv` recriado do zero (`rm -rf .venv && uv sync`). Todos os comandos rodados como `uv run python -m ...`. AC-010 verificado também no Linux Mint 22.3 (V-008).
 
 ## Resumo
 
@@ -25,7 +25,7 @@ Ambiente: Windows 11, uv 0.13.9, Python 3.13.18, `.venv` recriado do zero (`rm -
 | AC-007 | REQ-007 | PASS | V-006 |
 | AC-008 | REQ-007 | PASS | V-006 |
 | AC-009 | REQ-008 | PASS | V-007 |
-| AC-010 | REQ-009 | NOT_RUN | V-008 (Windows PASS; falta o Linux Mint) |
+| AC-010 | REQ-009 | PASS | V-008 |
 | AC-011 | REQ-010 | PASS | V-009 |
 | AC-012 | REQ-011 | PASS | V-010 |
 | AC-013 | REQ-012 | PASS | V-011 |
@@ -100,10 +100,14 @@ Ambiente: Windows 11, uv 0.13.9, Python 3.13.18, `.venv` recriado do zero (`rm -
 
 - Covers: AC-010 (REQ-009)
 - Method: `uv sync`, `uv run python -m pytest` e o comando do AC-007 em cada máquina
-- Result: NOT_RUN
+- Result: PASS
 - Date: 2026-11-19
-- Evidence: **Windows 11: PASS** (V-001, V-006, V-009). Linux Mint: não executado; o agente não tem acesso (`SPEC-0001-T010`).
-- Limitations: o AC só passa a PASS com a execução no Linux Mint.
+- Evidence:
+  - **Windows 11: PASS** (V-001, V-006, V-009).
+  - **Linux Mint 22.3: PASS** — uv 0.11.7, CPython 3.13.13, `rm -rf .venv && uv sync` → 0. `uv run python -m pytest` → 59 passed, 0. `ruff check` → 0; `ruff format --check` → 24 arquivos, 0; `mypy` strict → 0 issues em 17 arquivos. `pre_commit run --all-files` → os três hooks Passed.
+  - CLI no Linux: `uv run python -m assistance_agent chat --tenant demo --message "oi"` → `[fake] você disse: oi`, 0. O script instalado também funciona: `uv run assistance-agent --help` → 0; modo interativo `olá` + `/sair` → 0; tenant inválido → 2; provedor desconhecido → 1. Acentos corretos no terminal.
+  - `git check-attr eol` → `lf` para `*.py` e `uv.lock`; `.env` e `.venv` ignorados.
+- Limitations: no Linux, a execução foi na worktree do commit `15bf92e` (mesmo conteúdo do repositório), não num `git clone` novo do GitHub; o `.venv` foi recriado do zero.
 
 ### V-009 — Portões de qualidade e pre-commit
 
@@ -132,6 +136,5 @@ Ambiente: Windows 11, uv 0.13.9, Python 3.13.18, `.venv` recriado do zero (`rm -
 
 ## Limitações e riscos remanescentes
 
-- O AC-010 depende do Linux Mint (`SPEC-0001-T010`, ação do usuário).
 - Isolamento por tenant só lógico/em memória; autenticação e persistência ficam para specs futuras de nível critical.
 - No Windows de desenvolvimento, use sempre `python -m` (ASR do Defender).

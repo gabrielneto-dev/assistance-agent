@@ -1,6 +1,6 @@
 # Branch: infrastructure
 
-Última revisão: 2026-11-19
+Última revisão: 2026-11-21
 
 ## Propósito
 
@@ -13,11 +13,11 @@ Não inclui: comportamento do agente (→ `agent-design`), APIs externas (→ `i
 
 ## Estado atual
 
-- Repositório git em `main`, com remoto `origin` no GitHub (`gabrielneto-dev/assistance-agent`). Esqueleto Python da `SPEC-0001` implementado e commitado (`e35a0ae`) → `CTX-FCT-20261119-repository-initialized`.
+- Repositório git em `main`, com remoto `origin` no GitHub (`gabrielneto-dev/assistance-agent`). Esqueleto Python da `SPEC-0001` implementado e commitado (`e35a0ae`); clonado também no Linux Mint, sem o hook do pre-commit instalado → `CTX-FCT-20261119-repository-initialized`.
 - Windows de desenvolvimento: o Defender (ASR da TI) bloqueia os `.exe` do `.venv`; use `uv run python -m` → `CTX-FCT-20261119-windows-asr-blocks-venv-exes`.
 - Armadilhas do ferramental (ruff com Markdown, pre-commit, acentos no Git Bash) → `CTX-NTE-20261119-python-tooling-pitfalls`.
 - Stack: Python + uv → `CTX-DEC-20261119-python-uv-stack`.
-- Execução local, portável entre Windows 11 e Linux Mint → `CTX-DEC-20261119-local-cross-platform-runtime`.
+- Execução local, portável entre Windows 11 e Linux Mint, verificada nas duas máquinas em 2026-11 → `CTX-DEC-20261119-local-cross-platform-runtime`.
 - Validação estrutural: `bash Context/_meta/validate.sh`; cuidados (LF, subshell, exclusões) → `CTX-NTE-20261119-validate-script-pitfalls`.
 
 ## Decisões ativas

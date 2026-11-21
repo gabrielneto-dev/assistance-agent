@@ -7,7 +7,7 @@ tags: [tooling, runtime]
 status: active
 confidence: verified
 created_at: 2026-11-19
-updated_at: 2026-11-19
+updated_at: 2026-11-21
 source_ids: []
 related: [CTX-DEC-20261119-local-cross-platform-runtime, CTX-DEC-20261119-python-uv-stack, CTX-NTE-20261119-python-tooling-pitfalls]
 depends_on: []
@@ -34,7 +34,7 @@ Funcionam normalmente: `python.exe` do `.venv`, o uv (instalado via winget) e to
 - Regra em `AGENTS.md`: sempre `uv run python -m <módulo>`. O pacote tem `__main__.py`, então `python -m assistance_agent` funciona.
 - Os hooks do pre-commit chamam `uv run python -m ...`.
 - Não contornar nem alterar a política: ela é da TI, não do projeto.
-- No Linux Mint não há essa restrição (o script `assistance-agent` deve funcionar lá, a confirmar na `SPEC-0001-T010`).
+- No Linux Mint não há essa restrição: o script `assistance-agent` funciona (`uv run assistance-agent --help` → 0; verificado na `SPEC-0001-T010`, V-008). A regra de usar `python -m` continua valendo nas duas máquinas, por portabilidade.
 
 ## Evidência
 

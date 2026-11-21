@@ -1,6 +1,6 @@
 # Branch: integrations
 
-Última revisão: 2026-11-19
+Última revisão: 2026-11-21
 
 ## Propósito
 
@@ -13,7 +13,7 @@ Não inclui: comportamento do agente (→ `agent-design`), runtime/deploy (→ `
 
 ## Estado atual
 
-- Primeiro canal de mensageria: **WhatsApp** (`CTX-DEC-20261119-multi-tenant-saas-product`); meio de integração indefinido.
+- Primeiro canal de mensageria: **WhatsApp** (`CTX-DEC-20261119-multi-tenant-saas-product`); meio de integração indefinido. As perguntas para o usuário estão listadas na própria `question`; a pesquisa ainda não foi feita.
 - Provedor de LLM indefinido; critérios em `CTX-QUE-20261119-llm-provider`; preços comparados em `CTX-RES-20261119-llm-provider-comparison` (revisar em 2026-12-01).
 
 ## Decisões ativas
@@ -22,7 +22,7 @@ Não inclui: comportamento do agente (→ `agent-design`), runtime/deploy (→ `
 
 ## Perguntas abertas
 
-- `CTX-QUE-20261119-llm-provider` — qual provedor/modelo de LLM usar (crítica; pesquisa comparativa pendente).
+- `CTX-QUE-20261119-llm-provider` — qual provedor/modelo de LLM usar (crítica; preços pesquisados; falta a avaliação de qualidade e as respostas do usuário listadas na `question`).
 - `CTX-QUE-20261119-whatsapp-integration-method` — API oficial da Meta ou provedor intermediário; conexão por tenant.
 
 ## Riscos

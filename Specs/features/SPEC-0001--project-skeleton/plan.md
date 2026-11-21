@@ -3,7 +3,7 @@ id: SPEC-0001-PLAN
 type: plan
 spec: SPEC-0001
 title: Plano técnico — Esqueleto do projeto
-status: ready
+status: done
 created_at: 2026-11-19
 updated_at: 2026-11-19
 context_refs:

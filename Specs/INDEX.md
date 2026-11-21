@@ -8,4 +8,4 @@ Próximo ID livre: **SPEC-0002**
 
 | ID | Título | Nível | Status | Fase | Prioridade | Dependências | Path |
 |---|---|---|---|---|---|---|---|
-| SPEC-0001 | Esqueleto do projeto — núcleo multi-tenant, portas de LLM/embeddings fake e CLI | full | in_progress | verify | high | — | `features/SPEC-0001--project-skeleton/` |
+| SPEC-0001 | Esqueleto do projeto — núcleo multi-tenant, portas de LLM/embeddings fake e CLI | full | done | complete | high | — | `features/SPEC-0001--project-skeleton/` |

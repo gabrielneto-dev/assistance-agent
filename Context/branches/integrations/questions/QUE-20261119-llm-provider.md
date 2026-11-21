@@ -7,7 +7,7 @@ tags: [llm, integrations]
 status: open
 priority: critical
 created_at: 2026-11-19
-updated_at: 2026-11-19
+updated_at: 2026-11-21
 related: [CTX-QUE-20261119-tech-stack, CTX-QUE-20261119-agent-capabilities, CTX-DEC-20261119-python-uv-stack, CTX-RES-20261119-llm-provider-comparison]
 depends_on: [CTX-QUE-20261119-project-scope-and-users]
 resolved_by: null
@@ -44,3 +44,13 @@ O usuário ainda não decidiu. Critérios já conhecidos: SDK Python (`CTX-DEC-2
 ## Pesquisa (2026-11-19)
 
 `CTX-RES-20261119-llm-provider-comparison`: os preços de lista de Anthropic, OpenAI e Google se equivalem em cada faixa, então preço não decide. A Anthropic não tem embeddings próprios (indica a Voyage AI). Próximo passo para decidir: uma avaliação pequena com as mesmas tarefas em 2–3 candidatos de faixa intermediária, com o código já atrás de interfaces de LLM e de embeddings.
+
+## O que falta o usuário responder (levantado em 2026-11-21)
+
+1. **Como decidir:** uma avaliação pequena (as mesmas conversas em 2–3 modelos de faixa intermediária, com critérios fixos definidos antes) ou uma escolha direta?
+2. **Privacidade (LGPD):** dados de clientes finais (nome, telefone, aparelho) podem ir para um provedor que processa nos EUA? Há exigência de retenção ou de processamento no Brasil?
+3. **Custo:** quanto, aproximadamente, se aceita gastar com IA por loja por mês? Isso define se é só um modelo intermediário ou um intermediário mais um barato.
+4. **Contas:** o usuário já tem conta ou créditos em algum provedor? A chave vai no `.env`, colocada pelo próprio usuário; só o nome da variável vai para `Context/`.
+5. **Embeddings:** o provedor pode ser escolhido pelo resultado da avaliação? É a escolha mais cara de trocar depois (reindexar todos os tenants).
+
+A avaliação depende do material real da loja piloto (`CTX-QUE-20261119-pilot-shop`). Como quem executa a avaliação é um modelo da Anthropic, uma das empresas comparadas, os critérios devem ser fixados antes e os resultados revisados pelo usuário.

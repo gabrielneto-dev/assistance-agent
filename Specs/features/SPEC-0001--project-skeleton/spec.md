@@ -2,8 +2,8 @@
 id: SPEC-0001
 type: spec
 title: Esqueleto do projeto — núcleo multi-tenant, portas de LLM/embeddings fake e CLI
-status: in_progress
-phase: verify
+status: done
+phase: complete
 level: full
 priority: high
 created_at: 2026-11-19
@@ -155,5 +155,6 @@ Tudo sem rede e sem credenciais.
 
 ## Change Log
 
+- 2026-11-19 — Spec concluída: AC-010 verificado no Linux Mint 22.3 (V-008); todos os AC em PASS.
 - 2026-11-19 — REQ-001, REQ-009, REQ-010 e os AC correspondentes passam a usar `uv run python -m <módulo>`. Motivo: no Windows de desenvolvimento, uma regra de redução de superfície de ataque do Microsoft Defender, gerenciada pela TI (ID `01443614-CD74-433A-B99E-2ECDC07BFC25`), bloqueia os lançadores `.exe` que o uv cria em `.venv/Scripts` (`assistance-agent.exe`, `pytest.exe` etc.). `python -m` funciona nas duas máquinas e não depende desses lançadores. A política não foi alterada.
 - 2026-11-19 — Spec criada. Escopo confirmado pelo usuário: núcleo + CLI fake, um pacote em camadas, pytest/ruff/mypy/pre-commit, Python 3.13.
